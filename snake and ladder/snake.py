@@ -19,6 +19,7 @@ def show_board():
 #check if the point is ladder
 def check_ladder(point):
     if (point in ladder_point):
+        print("climb up!!")
         return ladder[point]
     else:
         return point
@@ -27,6 +28,7 @@ def check_ladder(point):
 #check if the point is snake
 def check_snake(point):
     if (point in snake_point):
+        print("ouch! snake bite!!")
         return snake[point]
     else:
         return point

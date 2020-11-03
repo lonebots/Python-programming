@@ -3,10 +3,8 @@ import random
 
 end = 100
 
-#setting th
-ladder_point = [1, 4, 8, 21, 28, 50, 71, 88]
+#setting the snake and the ladders on the board
 ladder = {1: 38, 4: 14, 8: 30, 21: 42, 28: 74, 50: 67, 71: 92, 88: 99}
-snake_point = [32, 34, 48, 62, 88, 95, 97]
 snake = {32: 10, 34: 6, 48: 26, 62: 18, 88: 89, 95: 56, 97: 78}
 
 
@@ -18,7 +16,7 @@ def show_board():
 
 #check if the point is ladder
 def check_ladder(point):
-    if (point in ladder_point):
+    if (point in ladder.keys()):
         print("climb up!!")
         return ladder[point]
     else:
@@ -27,7 +25,7 @@ def check_ladder(point):
 
 #check if the point is snake
 def check_snake(point):
-    if (point in snake_point):
+    if (point in snake.keys()):
         print("ouch! snake bite!!")
         return snake[point]
     else:

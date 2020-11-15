@@ -16,7 +16,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.downloader.download('vader_lexicon')
 
 #provide proper path to your file
-file = ""
+file = "abc.txt"
 
 xl = pd.ExcelFile(file)  #read from the file
 
@@ -26,10 +26,13 @@ dfs = xl.parse(xl.sheet_names[0])  #take care of value in the brackets
 dfs = list(dfs['Timeline'])  # remove the blank line froomt he data frame
 print(dfs)
 
-sid=SentimentIntensityAnalyzer()
+sid = SentimentIntensityAnalyzer()
 
 str1 = "UTC_05:30"
 for data in dfs:
     a = data.find(str1)
     if (a == -1):
-        
+        ss = sid.polarity_scores(data)
+        print(data)
+        for k in ss:
+            print(k, ss[k])

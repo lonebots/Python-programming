@@ -20,5 +20,5 @@ x_arg='//span[contains(@title,'+target+')]'
 target=wait.until(EC.presence_of_element_located((By.XPATH,x_arg)))
 target.click()
 
-input_box = driver.find_element_by_class_name("DuUXI")
+input_box = driver.find_element_by_class_name(" - ")#replace with the class name of the chat box input
 input_box.send_keys(string+Keys.ENTER)
